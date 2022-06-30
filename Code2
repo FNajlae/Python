@@ -31,3 +31,5 @@ from collections import Counter
 C=Counter(LP)
 D = {k: v for k, v in sorted(C.items(), key= lambda v:v[1]) }
 E = {k: v for k, v in sorted(C.items(), key= lambda v:v[1], reverse = True) }
+D
+E
