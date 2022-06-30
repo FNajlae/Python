@@ -57,6 +57,9 @@ L4.sort()
 for operation in L4:
     if not operation in L2:
         L6.append(operation)
+        
+L5
+L6
 len(L6)
 len(L4)
 len(L2)
