@@ -63,39 +63,3 @@ len(L2)
 len(L5)
 len(L3)
 len(L1)
-
-################
-
-f = open("bioschemas-dump.ttl", "r")
-lines1 = f.readlines()
-f.close()
-f = open("edam.owl.rdf", "r")
-lines2 = f.readlines()
-f.close()
- ##Topic: 
-LL=[]
-for line in lines1:
-    if line[30:40] == "edam:topic":
-        info = line[35:45]
-        LL.append(info)
-    if line[8:18] == "edam:topic":
-        info1 = line[13:23]
-        LL.append(info1)
-LL.sort()
-from collections import Counter
-A=Counter(LL)
-B = {k: v for k, v in sorted(A.items(), key= lambda v:v[1]) }
-##Operation:
-LP=[]
-for li in lines1:
-    if li[19:33] == "edam:operation":
-        info2 = li[24:38]
-        LP.append(info2)
-    if li[8:22] == "edam:operation":
-        info3 = li[13:27]
-        LP.append(info3)
-LP.sort()
-from collections import Counter
-C=Counter(LP)
-D = {k: v for k, v in sorted(C.items(), key= lambda v:v[1]) }
-E = {k: v for k, v in sorted(C.items(), key= lambda v:v[1], reverse = True) }
