@@ -1,0 +1,6 @@
+#SPARQL : 
+
+SELECT (count(?all_parents) as ?distance) WHERE {
+   <http://edamontology.org/topic_0077> rdfs:subClassOf* ?all_parents .
+   ?all_parents rdfs:label ?all_p_labels . 
+}
